@@ -8,6 +8,7 @@ class Assesment2{
         this.scenes = [];
         this.currentIndex = 0;
         this.currentScene = this.scenes[this.currentIndex];
+        this.total_points = 0;
 
         this.handle_next_scene_with_space();
 
@@ -140,7 +141,8 @@ class Scene{
         //this.screen_scale = {x:16, y:9};
         //this.screen_units = {x: this.canvas.width/16, y: this.canvas.width/9};
 
-        
+
+        this.name = 'nobody';
         this.instructions = null;
         this.contents = null;
         this.loop = null;
@@ -534,17 +536,21 @@ class Scene{
         // //headline
         this.display_title(this.instructions.headline + " - Instructions");
 
+        
+
         //lines
         this.display_text_lines(this.instructions.lines)
 
+
         this.display_score();
         this.display_time();
+
     }
 
     display_score(){
         if(this.score_needed != 0){
             this.ctx.fillStyle = '#ccc';
-            this.display_text_lines(['Score: '+ this.score+ ' out of '+ this.score_needed + ' points.'], this.make_smu_x(0.02), this.make_smu_y(0.95));
+            this.display_text_lines(['Score: '+ this.score+ ' out of '+ this.score_needed + ' points. - ' + this.name], this.make_smu_x(0.02), this.make_smu_y(0.95));
         }
     }
 

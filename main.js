@@ -141,10 +141,12 @@ canvas1.addEventListener('keydown',(e)=>{
 // get name
 //assesment.scenes[2].contents();
 
-//let name  = window.prompt('Enter your name: ')
-//score.other_assets.push(name);
 
+//score.other_assets.push(name);
+let name  = window.prompt('Enter your name: ')
+assesment.scenes.forEach((scene)=>{scene.name = name})
 assesment.start_assesment();
+
 //assesment.scenes[6].contents();
 
 //assesment.scenes[2].contents();
